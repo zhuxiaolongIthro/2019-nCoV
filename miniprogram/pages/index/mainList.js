@@ -1,4 +1,4 @@
-// pages/deployFunctions/deployFunctions.js
+// pages/index/mainList.js
 Page({
 
   /**
