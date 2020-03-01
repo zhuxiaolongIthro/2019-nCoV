@@ -2,69 +2,38 @@
 const app = getApp()
 Page({
   data: {
-    data: {
-      data_title: '',
-      data: {
-        cachetime: '',
-        gntotal: '',
-        deathtotal: '',
-        econNum: '',
-        gntotal: '',
-        heconNum: '',
-        list: [{
-          name: '',
-          ename: '',
-          value: '',
-          conadd: '',
-          hejian: '',
-          econNum: '',
-          susNum: '',
-          deathNum: '',
-          cureNum: ''
-        }]
-      }
-    },
+    response:{}
+  },
+  onPullDownRefresh(){
+    console.log("pull down")
+    this.refreshData();
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    this.refreshData();
+  },
+  refreshData:function(){
     var tt = this;
+
     wx.request({
       url: 'https://interface.sina.cn/news/wap/fymap2020_data.d.json',
-      data: {
-        data_title: '',
-        data: {
-          cachetime: '',
-          gntotal: '',
-          deathtotal: '',
-          econNum: '',
-          gntotal: '',
-          heconNum: '',
-          list: [{
-            name: '',
-            ename: '',
-            value: '',
-            conadd: '',
-            hejian: '',
-            econNum: '',
-            susNum: '',
-            deathNum: '',
-            cureNum: ''
-          }]
-        }
-      },
+      header: { 'content-type': 'application/json' },
       success(res) {
+        // 解析返回值
+        console.log("text :" + JSON.stringify(res.data));
+        console.log("data_title " + res.data.data_title);
+        console.log("data {}" + res.data.data)
+        console.log("data {}" + JSON.stringify(res.data.data))
         tt.setData({
-          myData: res,
-          list:res.data.list
-        })
-        console.log("finished")
+          response: res.data
+        });
+        wx.stopPullDownRefresh();
       },
       fail(res) {
         console.log(res.error)
       }
     })
-  },
-
+  }
 })
