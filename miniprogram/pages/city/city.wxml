@@ -1,22 +1,9 @@
+<!--miniprogram/pages/city/city.wxml-->
 <!--index.wxml-->
 <view class="container">
   <!-- title -->
-  <view class="appBar">
-    <text class="titleText"> 疫情查询 </text>
-  </view>
-  <!-- 数据时效信息 数据更新时间 -->
-  <text class="cacheTime" style="font-size:12px">
-    数据更新时间:{{response.data.cachetime}}
-  </text>
-  <view>
-  <text class="gnTotal" >
-    全国累计治愈:{{response.data.curetotal}}
-  </text>
-  </view>
   <scroll-view>
-    <view wx:for="{{response.data.list}}" wx:for-item="item"
-      data-citys="{{item}}"
-     bindtap="itemClick">
+    <view wx:for="{{cityData.city}}" wx:for-item="item">
       <view >
         <text class="list-title">{{item.name}}</text>
       </view>
@@ -27,7 +14,7 @@
         <text class="list-item" style="color:gray">累计死亡</text>
       </view>
       <view class="list-item-layout">
-        <text class="list-item" style="color:black">{{item.value}}</text>
+        <text class="list-item" style="color:black">{{item.conNum}}</text>
         <text class="list-item" style="color:red">{{item.conadd}}</text>
         <text class="list-item" style="color:green">{{item.cureNum}}</text>
         <text class="list-item" style="color:gray">{{item.deathNum}}</text>

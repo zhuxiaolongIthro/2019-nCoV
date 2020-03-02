@@ -4,6 +4,13 @@ Page({
   data: {
     response:{}
   },
+  itemClick:function(event){
+    var itemData = event.currentTarget.dataset;
+    var dataStr = JSON.stringify(itemData)
+      wx.navigateTo({
+        url: '../city/city?data='+dataStr,
+      })
+  },
   onPullDownRefresh(){
     console.log("pull down")
     this.refreshData();
