@@ -12,12 +12,18 @@
         <text class="list-title">{{item.name}}</text>
       </view>
       <view class="list-item-layout">
-        <text class="list-item">累计确诊：{{item.value}}人</text>
-        <text class="list-item">今日新增：{{item.conadd}}人</text>
-        <text class="list-item">累计治愈：{{item.cureNum}}人</text>
-        <text class="list-item">累计死亡：{{item.deathNum}}人</text>
+        <text class="list-item" style="color:black">累计确诊</text>
+        <text class="list-item" style="color:red">今日新增</text>
+        <text class="list-item" style="color:green">累计治愈</text>
+        <text class="list-item" style="color:gray">累计死亡</text>
       </view>
-
+      <view class="list-item-layout">
+        <text class="list-item" style="color:black">{{item.value}}</text>
+        <text class="list-item" style="color:red">{{item.conadd}}</text>
+        <text class="list-item" style="color:green">{{item.cureNum}}</text>
+        <text class="list-item" style="color:gray">{{item.deathNum}}</text>
+      </view>
+      <view class="line"/>
     </view>
 
 

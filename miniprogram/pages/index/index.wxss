@@ -14,11 +14,24 @@ page {
   font-size: 24px
 }
 .list-item-layout{
-  
+  width: 100%;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+  flex-direction: row;
 }
 .list-item{
-  margin-left: 8px;
+  width: 25%;
+  justify-content: space-between;
+  text-align: center;
   display: inline-block;
   font-size: 14px
 }
+.line{
+  height: 1px;
+  margin-left: 8px;
+  margin-right: 8px;
+  background-color: gray
+}
+
 
