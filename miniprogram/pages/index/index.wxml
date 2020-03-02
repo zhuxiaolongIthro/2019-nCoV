@@ -1,21 +1,26 @@
 <!--index.wxml-->
 <view class="container">
-<!-- title -->
-<view class="appBar">
-  <text> 疫情查询 </text>
-</view>
-<!-- 数据时效信息 数据更新时间 -->
-<text class="cacheTime" style="">数据更新时间:{{response.data.cachetime}}</text>
-<scroll-view>
-  <view wx:for="{{response.data.list}}" wx:for-item="item">
-    <view>{{item.name}}</view>
-    <view>累计确诊：{{item.value}}人</view>
-    <view>今日新增：{{item.conadd}}人</view>
-    <view>累计治愈：{{item.cureNum}}人</view>
-    <view>累计死亡：{{item.deathNum}}人</view>
+  <!-- title -->
+  <view class="appBar">
+    <text class="titleText"> 疫情查询 </text>
   </view>
+  <!-- 数据时效信息 数据更新时间 -->
+  <text class="cacheTime" style="">数据更新时间:{{response.data.cachetime}}</text>
+  <scroll-view>
+    <view wx:for="{{response.data.list}}" wx:for-item="item">
+      <view>
+        <text class="list-title">{{item.name}}</text>
+      </view>
+      <view class="list-item-layout">
+        <text class="list-item">累计确诊：{{item.value}}人</text>
+        <text class="list-item">今日新增：{{item.conadd}}人</text>
+        <text class="list-item">累计治愈：{{item.cureNum}}人</text>
+        <text class="list-item">累计死亡：{{item.deathNum}}人</text>
+      </view>
+
+    </view>
 
 
-</scroll-view>
+  </scroll-view>
 
 </view>

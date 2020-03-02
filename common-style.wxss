@@ -1,0 +1,8 @@
+/**common-style.wxss**/
+
+
+.titleStyle{
+  padding-left: 20px;
+  text-align:left;
+
+}
